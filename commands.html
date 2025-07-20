@@ -54,12 +54,17 @@
       max-width: 600px;
       border-radius: 5px;
       margin-top: 10px;
-      box-shadow: 0 0 10px #00f2ff55;
-      transition: transform 0.3s ease;
+      box-shadow:
+       0 0 10px rgba(38, 198, 218, 0.6), 
+       0 0 20px rgba(201, 160, 255, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .command img:hover {
       transform: scale(1.02);
+      box-shadow:
+       0 0 12px rgba(38, 198, 218, 0.9),
+       0 0 24px rgba(201, 160, 255, 0.6);
     }
 
     @media (max-width: 768px) {
