@@ -87,19 +87,15 @@
 </head>
 <body>
 
-  <script>
-  function toggleDetail(el) {
-    const detail = el.nextElementSibling;
-    const indicator = el.querySelector('.toggle-indicator');
+<script>
+function toggleDetail(button) {
+  const command = button.closest(".command");
+  const details = command.querySelector(".details");
 
-    detail.classList.toggle('expanded');
-
-    if (detail.classList.contains('expanded')) {
-      indicator.innerHTML = '▲ Hide';
-    } else {
-      indicator.innerHTML = '▼ Show more';
-    }
-  }
+  const isHidden = details.style.display === "none";
+  details.style.display = isHidden ? "block" : "none";
+  button.textContent = isHidden ? "▲ Show less" : "▼ Show more";
+}
 </script>
 
   <h1> M1 Bot Commands</h1>
@@ -107,14 +103,15 @@
 
   <!-- Moderation -->
   <div class="command">
-  <div class="summary" onclick="toggleDetail(this)">
+  <div class="summary">
     🔹 <code>M1warn @user [reason]</code> — Warn a member
-    <span class="toggle-indicator">▼ Show more</span>
+    <br>
+    <img src="https://cdn.discordapp.com/attachments/1386349290653225130/1396608734859624600/IMG_4023.png?ex=687eb4be&is=687d633e&hm=e69ba691d77916997de9d564ab13970051c562c9c8bf367de622b009d06a42ed&" alt="Warn command" style="width: 100%; height: auto; border-radius: 10px;">
+    <br>
+    <span class="toggle-indicator" onclick="toggleDetail(this)">▼ Show more</span>
   </div>
-  <img src="https://cdn.discordapp.com/attachments/1386349290653225130/1396608734859624600/IMG_4023.png?ex=687eb4be&is=687d633e&hm=e69ba691d77916997de9d564ab13970051c562c9c8bf367de622b009d06a42ed&" 
-       alt="Warn command" class="command-image">
-  <div class="details">
-    <p>Staff can use this command to warn members. It sends them a DM with the warning info and stores their warning count in the server database.</p>
+  <div class="details" style="display: none;">
+    <p>Staff can use this command to warn members. It sends them a DM with the warning info and stores their warning count in the database.</p>
   </div>
 </div>
   
