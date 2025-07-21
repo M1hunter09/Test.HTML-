@@ -72,31 +72,29 @@
         width: 100%;
       }
     }   
-
-  .details {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease, opacity 0.4s ease;
-  opacity: 0;
+    .details {
+  display: none;
+  margin-top: 10px;
+  color: #ccc;
+  transition: all 0.3s ease;
 }
-.details.open {
-  max-height: 500px; 
-  opacity: 1;
+
+.details.expanded {
+  display: block;
 }
 
   </style>
 </head>
 <body>
-   <div class="container">
 
 <script>
 function toggleDetail(button) {
   const command = button.closest(".command");
   const details = command.querySelector(".details");
 
-  details.classList.toggle("open");
-  const isOpen = details.classList.contains("open");
-  button.textContent = isOpen ? "▲ Show less" : "▼ Show more";
+  const isHidden = details.style.display === "none";
+  details.style.display = isHidden ? "block" : "none";
+  button.textContent = isHidden ? "▲ Show less" : "▼ Show more";
 }
 </script>
 
@@ -104,6 +102,9 @@ function toggleDetail(button) {
  <p style="color: #8264fb;">Tip, send "M1help" in a server with the Bot</p>
 
   <!-- Moderation -->
+  <div class="category">
+    <h2>🛡️ Moderation</h2>
+    
   <div class="command">
   <div class="summary">
     🔹 <code>M1warn @user [reason]</code> — Warn a member
@@ -116,30 +117,20 @@ function toggleDetail(button) {
     <p>Staff can use this command to warn members. It sends them a DM with the warning info and stores their warning count in the database.</p>
   </div>
 </div>
-  
-  <div class="category">
-    <h2>🛡️ Moderation</h2>
-    <div class="command">
-      <p><strong>M1warn @user [reason]</strong> - Warn a member</p>
-      <img src="https://cdn.discordapp.com/attachments/1386349290653225130/1396608734859624600/IMG_4023.png?ex=687eb4be&is=687d633e&hm=e69ba691d77916997de9d564ab13970051c562c9c8bf367de622b009d06a42ed&" alt="Warn command">
-    </div>
-    <div class="command">
-      <p><strong>M1warnings @user</strong> - Check member warnings</p>
-      <img src="https://cdn.discordapp.com/attachments/1386349290653225130/1396608735195172885/IMG_4024.png?ex=687eb4be&is=687d633e&hm=835b98a809a0b0b0aef0fa2a209db47ef1391f91e67256b47b90af68dee0e3d6&" alt="warnings command">
-    </div>
-  </div>
 
   <div class="command">
-  <div class="summary" onclick="toggleDetail(this)">
-    🔹 <code>M1kick @user</code> — Kicks a user from the server
-    <span class="toggle-indicator">▼ Show more</span>
+  <div class="summary">
+    🔹 <code>M1warnings @user</code> — Check user warnings
+    <br>
+    <img src="https://cdn.discordapp.com/attachments/1386349290653225130/1396608735195172885/IMG_4024.png?ex=687eb4be&is=687d633e&hm=835b98a809a0b0b0aef0fa2a209db47ef1391f91e67256b47b90af68dee0e3d6&" alt="Warnings command" style="width: 100%; height: auto; border-radius: 10px;">
+    <br>
+    <span class="toggle-indicator" onclick="toggleDetail(this)">▼ Show more</span>
   </div>
-  <div class="details">
-    <p>This command removes the mentioned user from the server. It requires Kick Members permission. Logs the action if logging is configured in the server.</p>
+  <div class="details" style="display: none;">
+    <p>use this command to chech member warnings. It fetches waring data from the database and replys with an embed containing the warning data for the mentioned memebr.</p>
   </div>
 </div>
-
-
+    
   <!-- Utility -->
   <div class="category">
     <h2>🛠️ Utility</h2>
