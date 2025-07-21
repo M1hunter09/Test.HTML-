@@ -72,6 +72,23 @@
         width: 100%;
       }
     }
+
+<script>
+  function toggleDetail(el) {
+    const detail = el.nextElementSibling;
+    const indicator = el.querySelector('.toggle-indicator');
+
+    detail.classList.toggle('expanded');
+
+    if (detail.classList.contains('expanded')) {
+      indicator.innerHTML = '▲ Hide';
+    } else {
+      indicator.innerHTML = '▼ Show more';
+    }
+  }
+</script>
+
+    
   </style>
 </head>
 <body>
