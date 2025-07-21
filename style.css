@@ -31,3 +31,52 @@ body {
   padding: 40px;
   text-align: center;
 }
+
+
+.command {
+  margin-bottom: 30px;
+}
+
+.summary {
+  cursor: pointer;
+  color: #00f2ff;
+  font-weight: 500;
+  background-color: #1a1a1a;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border-left: 3px solid #00f2ff;
+  box-shadow: 0 0 12px rgba(0, 242, 255, 0.4), 0 0 20px rgba(114, 0, 254, 0.3);
+  transition: background-color 0.3s ease;
+  position: relative;
+}
+
+.summary:hover {
+  background-color: #232323;
+}
+
+.toggle-indicator {
+  float: right;
+  color: #aaa;
+  font-size: 0.9em;
+}
+
+.details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.3s ease;
+  padding: 0 16px;
+  background-color: #121212;
+  border-radius: 0 0 8px 8px;
+  border-left: 3px solid #7200fe;
+  box-shadow: inset 0 0 10px rgba(114, 0, 254, 0.3);
+}
+
+.details p {
+  margin: 10px 0;
+  color: #ccc;
+}
+
+.details.expanded {
+  max-height: 500px;
+  padding: 12px 16px;
+}
