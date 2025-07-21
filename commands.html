@@ -72,29 +72,31 @@
         width: 100%;
       }
     }   
-    .details {
-  display: none;
-  margin-top: 10px;
-  color: #ccc;
-  transition: all 0.3s ease;
-}
 
-.details.expanded {
-  display: block;
+  .details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+}
+.details.open {
+  max-height: 500px; 
+  opacity: 1;
 }
 
   </style>
 </head>
 <body>
+   <div class="container">
 
 <script>
 function toggleDetail(button) {
   const command = button.closest(".command");
   const details = command.querySelector(".details");
 
-  const isHidden = details.style.display === "none";
-  details.style.display = isHidden ? "block" : "none";
-  button.textContent = isHidden ? "▲ Show less" : "▼ Show more";
+  details.classList.toggle("open");
+  const isOpen = details.classList.contains("open");
+  button.textContent = isOpen ? "▲ Show less" : "▼ Show more";
 }
 </script>
 
