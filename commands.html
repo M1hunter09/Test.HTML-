@@ -83,16 +83,16 @@
 .details-wrapper {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.5s ease, padding 0.3s ease;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  padding-top: 0;
 }
 
 .details-wrapper.expanded {
-  max-height: 400px; 
+  max-height: 500px; /* enough to show all content */
   padding-top: 10px;
 }
 
 .details {
-  color: #ccc;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -123,13 +123,13 @@ function toggleDetail(button) {
 <div class="category">
   <h2>🛡️ Moderation</h2>
 
-  
   <div class="command">
     🔹 <code><strong>M1warn @user [reason]</strong></code> — Warn a member
     <br>
     <img src="https://cdn.discordapp.com/attachments/1386349290653225130/1396608734859624600/IMG_4023.png?ex=688351fe&is=6882007e&hm=92dd82cd0ff4cf70d1f401d4f0de7067b3fb85c1fb6fc9a641281b070e999dd9&" alt="Warn command" style="width: 100%; height: auto; border-radius: 10px;">
     <br>
     <span class="toggle-indicator" onclick="toggleDetail(this)">▼ Show more</span>
+    
     <div class="details-wrapper">
     <div class="details">
       <p><strong>Staff can use this command to warn members. It sends them a DM with the warning info and stores their warning count in the database.</strong></p>
@@ -146,6 +146,7 @@ function toggleDetail(button) {
       <div class="details-wrapper">
     <div class="details">
       <p><strong>Use this command to check member warnings. It fetches warning data from the database and replies with an embed containing the warning data for the mentioned member.</strong></p>
+      </div>
     </div>
   </div>
 </div>
