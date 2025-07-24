@@ -80,15 +80,25 @@
         width: 100%;
       }
     }   
-    .details {
-  display: none;
-  margin-top: 10px;
-  color: #ccc;
-  transition: all 0.5s ease;
+.details-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.3s ease;
 }
 
-.details.expanded {
-  display: block;
+.details-wrapper.expanded {
+  max-height: 400px; 
+  padding-top: 10px;
+}
+
+.details {
+  color: #ccc;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.details-wrapper.expanded .details {
+  opacity: 1;
 }
 
   </style>
@@ -98,43 +108,44 @@
 <script>
 function toggleDetail(button) {
   const command = button.closest(".command");
-  const details = command.querySelector(".details");
+  const wrapper = command.querySelector(".details-wrapper");
+  const isExpanded = wrapper.classList.contains("expanded");
 
-  const isHidden = details.style.display === "none";
-  details.style.display = isHidden ? "block" : "none";
-  button.textContent = isHidden ? "▲ Show less" : "▼ Show more";
+  wrapper.classList.toggle("expanded");
+  button.textContent = isExpanded ? "▼ Show more" : "▲ Show less";
 }
 </script>
 
   <h1> M1 Bot Commands</h1>
  <p style="color: #8264fb;">Tip, send "M1help" in a server with the Bot</p>
 
-  <!-- Moderation -->
-  <div class="category">
-    <h2>🛡️ Moderation</h2>
-    
-  <div class="command">
+<!-- Moderation -->
+<div class="category">
+  <h2>🛡️ Moderation</h2>
+
   
+  <div class="command">
     🔹 <code><strong>M1warn @user [reason]</strong></code> — Warn a member
     <br>
-    <img src="https://cdn.discordapp.com/attachments/1386349290653225130/1396608734859624600/IMG_4023.png?ex=687eb4be&is=687d633e&hm=e69ba691d77916997de9d564ab13970051c562c9c8bf367de622b009d06a42ed&" alt="Warn command" style="width: 100%; height: auto; border-radius: 10px;">
+    <img src="https://cdn.discordapp.com/attachments/1386349290653225130/1396608734859624600/IMG_4023.png" alt="Warn command" style="width: 100%; height: auto; border-radius: 10px;">
     <br>
     <span class="toggle-indicator" onclick="toggleDetail(this)">▼ Show more</span>
+    <div class="details">
+      <p><strong>Staff can use this command to warn members. It sends them a DM with the warning info and stores their warning count in the database.</strong></p>
+    </div>
   </div>
-  <div class="details" style="display: none;">
-    <p><strong>Staff can use this command to warn members. It sends them a DM with the warning info and stores their warning count in the database.</strong></p>
+
   <div class="command">
     🔹 <code><strong>M1warnings @user</strong></code> — Check user warnings
     <br>
-    <img src="https://cdn.discordapp.com/attachments/1386349290653225130/1396608735195172885/IMG_4024.png?ex=687eb4be&is=687d633e&hm=835b98a809a0b0b0aef0fa2a209db47ef1391f91e67256b47b90af68dee0e3d6&" alt="Warnings command" style="width: 100%; height: auto; border-radius: 10px;">
+    <img src="https://cdn.discordapp.com/attachments/1386349290653225130/1396608735195172885/IMG_4024.png" alt="Warnings command" style="width: 100%; height: auto; border-radius: 10px;">
     <br>
     <span class="toggle-indicator" onclick="toggleDetail(this)">▼ Show more</span>
-  </div>
-  <div class="details" style="display: none;">
-    <p><strong>use this command to check member warnings. It fetches warning data from the database and replys with an embed containing the warning data for the mentioned memebr.</strong></p>
+    <div class="details">
+      <p><strong>Use this command to check member warnings. It fetches warning data from the database and replies with an embed containing the warning data for the mentioned member.</strong></p>
+    </div>
   </div>
 </div>
-    
 
   <!-- Utility -->
   <div class="category">
