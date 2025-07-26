@@ -31,7 +31,7 @@ body {
   font-weight: 500;
   position: relative;
   background: linear-gradient(90deg, #222, #333);
-  box-shadow: 0 0 10px rgbargba(40, 0, 80, 0.3);
+  box-shadow: 0 0 10px rgba(40, 0, 80, 0.3);
   transition: all 0.3s ease;
   backdrop-filter: blur(3px);
 }
