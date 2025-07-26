@@ -67,7 +67,7 @@ body {
   background: #111;
   color: #00f2ff;
   font-weight: 600;
-  box-shadow: 0 0 12px rgba(0, 242, 255, 0.6), 0 0 24px rgba(114, 0, 254, 0.4);
+  box-shadow: 0 0 12px rgba(0, 242, 255, 1), 0 0 24px rgba(114, 0, 254, 1);
 }
 
 .content {
