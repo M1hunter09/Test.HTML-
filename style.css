@@ -17,7 +17,7 @@ body {
   flex-wrap: wrap;
   background: linear-gradient(90deg, #0d0d0d, #1a1a1a); 
   padding: 12px 0;
-  box-shadow: 0 0 15px linear-gradient(90deg, #65009c, #010101);
+  box-shadow: 0 0 25px linear-gradient(90deg, #65009c, #010101);
   position: sticky;
   top: 0;
   z-index: 999;
