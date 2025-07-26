@@ -92,7 +92,7 @@ body {
 }
 
 .gradient-text {
-  background: radial-gradient(circle at center, #7200fe, #00f2ff, #1e1e1e);
+  background: radial-gradient(circle at center, #7200fe, #00f2ff, #0135d0, #1e1e1e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
