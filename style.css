@@ -31,20 +31,6 @@ body {
   font-weight: 500;
   position: relative;
   background: linear-gradient(90deg, #222, #333);
-  box-shadow: 0 0 10px rgba(0, 242, 255, 0.2);
-  transition: all 0.3s ease;
-  backdrop-filter: blur(3px);
-}
-
-.navbar a {
-  color: white;
-  text-decoration: none;
-  margin: 8px 12px;
-  padding: 10px 20px;
-  border-radius: 10px;
-  font-weight: 500;
-  position: relative;
-  background: linear-gradient(90deg, #222, #333);
   box-shadow: 0 0 10px rgba(93, 80, 194, 0.86);
   transition: all 0.3s ease;
   backdrop-filter: blur(3px);
