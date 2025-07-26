@@ -128,7 +128,7 @@ function toggleDetail(button) {
   <h2>🛡️ Moderation</h2>
 
   <div class="command">
-    🔹 <code><strong>M1warn @user [reason]</strong></code> — Warn a member
+    <code><strong>M1warn @user [reason]</strong></code> — Warn a member
     <br>
     <img src="https://cdn.discordapp.com/attachments/1386349290653225130/1396608734859624600/IMG_4023.png?ex=688351fe&is=6882007e&hm=92dd82cd0ff4cf70d1f401d4f0de7067b3fb85c1fb6fc9a641281b070e999dd9&" alt="Warn command" style="width: 100%; height: auto; border-radius: 10px;">
     <br>
@@ -142,7 +142,7 @@ function toggleDetail(button) {
 </div>
 
   <div class="command">
-    🔹 <code><strong>M1warnings @user</strong></code> — Check user warnings
+    <code><strong>M1warnings @user</strong></code> — Check user warnings
     <br>
     <img src="https://cdn.discordapp.com/attachments/1386349290653225130/1396608735195172885/IMG_4024.png?ex=688351fe&is=6882007e&hm=e7c8da9852a0e8a490a5eb93a1d7837db099a7b767ecb0ec5122e51cdcfb04fa&" alt="Warnings command" style="width: 100%; height: auto; border-radius: 10px;">
     <br>
@@ -155,67 +155,139 @@ function toggleDetail(button) {
   </div>
 </div>
 
+  
   <!-- Utility -->
   <div class="category">
     <h2>🛠️ Utility</h2>
-    <div class="command">
-      <p><strong>M1purge [3 - 100]</strong> - Bulk delete messages</p>
-      <img src="https://cdn.discordapp.com/attachments/1386349290653225130/1396617479983206400/IMG_4034.jpg?ex=687ebce3&is=687d6b63&hm=bd78269e97fcfe106115983617c17c382ebefdef74fb9287e720ebf8ac74dc2b&" alt="purge command">
-    </div>
-    <div class="command">
-      <p><strong>M1ping</strong> - Check latency</p>
+
+  <div class="command">
+    <code><strong>M1purge [3 - 100]</strong></code> — Bulk delete messages
+    <br>
+    <img src="https://cdn.discordapp.com/attachments/1386349290653225130/1396617479983206400/IMG_4034.jpg?ex=687ebce3&is=687d6b63&hm=bd78269e97fcfe106115983617c17c382ebefdef74fb9287e720ebf8ac74dc2b&" alt="Purge Command" style="width: 100%; height: auto; border-radius: 10px;">
+    <br>
+    <span class="toggle-indicator" onclick="toggleDetail(this)">▼ Show more</span>
+    
+    <div class="details-wrapper">
+    <div class="details">
+      <p><strong>Staff can use this command to bulk delete recent messages, must be between 3 and 100, and generally within 15 days of being sent.</strong></p>
+     </div>
+  </div>
+</div>
+
+  <div class="command">
+    <code><strong>M1ping</strong></code> — Check latency
     <br>
     <img src="https://cdn.discordapp.com/attachments/1386349290653225130/1396608735509610727/IMG_4025.png?ex=687eb4be&is=687d633e&hm=f9b43d3e1c1621dd03ccdc70855b8acf6005b9c8d965735bb24d5a11aef5668e&" alt="ping command" style="width: 100%; height: auto; border-radius: 10px;">
     <br>
     <span class="toggle-indicator" onclick="toggleDetail(this)">▼ Show more</span>
-  </div>
-  <div class="details" style="display: none;">
-    <p><strong>Staff can use this command to warn members. It sends them a DM with the warning info and stores their warning count in the database.</strong></p>
+      <div class="details-wrapper">
+    <div class="details">
+      <p><strong>Use this command to check Bot, discord, and Api latency.</strong></p>
+      </div>
+    </div>
   </div>
 </div>
 
   <!-- Fun -->
   <div class="category">
     <h2>🎉 Fun</h2>
-    <div class="command">
-      <p><strong>M18ball [Yes or No Question]</strong> - Ask the magic 8ball(yes or no questions)</p>
-      <img src="https://cdn.discordapp.com/attachments/1386349290653225130/1396608735752749056/IMG_4026.png?ex=687eb4be&is=687d633e&hm=4e5251d169fe74ffa83018fc62dc47df858a3d82d49304377a15c7a14af66ba8&" alt="8ball command">
-      <p><strong>M1poll [Question]</strong> - Create a yes,no,maybe poll</p>
-      <img src="https://cdn.discordapp.com/attachments/1386349290653225130/1396636660183076874/IMG_4036.png?ex=687ecec0&is=687d7d40&hm=03ec60d61d9b8accc6eeb1a4d1668c9d9df5e2c1b33d57c1010357c16ae6a9b4&" alt="poll command">
+
+  <div class="command">
+    <code><strong>M18ball [Yes or No Question]</strong></code> — Ask the magic 8ball (yes or no questions)
+    <br>
+    <img src="https://cdn.discordapp.com/attachments/1386349290653225130/1396608735752749056/IMG_4026.png?ex=687eb4be&is=687d633e&hm=4e5251d169fe74ffa83018fc62dc47df858a3d82d49304377a15c7a14af66ba8&" alt="8Ball Command" style="width: 100%; height: auto; border-radius: 10px;">
+    <br>
+    <span class="toggle-indicator" onclick="toggleDetail(this)">▼ Show more</span>
+    
+    <div class="details-wrapper">
+    <div class="details">
+      <p><strong>use this command to ask the magic 8Ball questions.</strong></p>
+     </div>
+  </div>
+</div>
+
+  <div class="command">
+    <code><strong>M1poll [Question]</strong></code> — Create a yes,no,maybe poll
+    <br>
+    <img src="https://cdn.discordapp.com/attachments/1386349290653225130/1396636660183076874/IMG_4036.png?ex=687ecec0&is=687d7d40&hm=03ec60d61d9b8accc6eeb1a4d1668c9d9df5e2c1b33d57c1010357c16ae6a9b4&" alt="poll command" style="width: 100%; height: auto; border-radius: 10px;">
+    <br>
+    <span class="toggle-indicator" onclick="toggleDetail(this)">▼ Show more</span>
+      <div class="details-wrapper">
+    <div class="details">
+      <p><strong>Use this command to make a poll embed with your question and 3 reactions, thumbs up, shrug, thumbs down.</strong></p>
+      </div>
     </div>
   </div>
+</div>
 
   <!-- League -->
   <div class="category">
     <h2>🏆 League</h2>
-    <div class="command">
-      <p><strong>M1sign @user @teamRole</strong> - Sign a player to a team</p>
-      <img src="https://cdn.discordapp.com/attachments/1386349290653225130/1396612002050474006/IMG_4028.png?ex=687eb7c9&is=687d6649&hm=f7308f18464aa34941fcf6eeb4e6488abfbb9fd78044b68e458be2441e340506&" alt="Sign command">
-    </div>
-    <div class="command">
-      <p><strong>M1release @user @teamRole</strong> - Release a player from a team</p>
-      <img src="https://cdn.discordapp.com/attachments/1386349290653225130/1396612006286721074/IMG_4029.png?ex=687eb7ca&is=687d664a&hm=6aeb0013c925e2fa3eed4c27d411e86d272674bf9f9bd10e10906dceddb3f900&" alt="Release command">
+
+  <div class="command">
+    <code><strong>M1sign @user @teamRole</strong></code> — Sign a player to a team
+    <br>
+    <img src="https://cdn.discordapp.com/attachments/1386349290653225130/1396612002050474006/IMG_4028.png?ex=687eb7c9&is=687d6649&hm=f7308f18464aa34941fcf6eeb4e6488abfbb9fd78044b68e458be2441e340506&" alt="Sign Command" style="width: 100%; height: auto; border-radius: 10px;">
+    <br>
+    <span class="toggle-indicator" onclick="toggleDetail(this)">▼ Show more</span>
+    
+    <div class="details-wrapper">
+    <div class="details">
+      <p><strong>use this command to Sign a player to a teams role, must be set up in M1config, only works with 1 user and 1 role at a time.</strong></p>
+     </div>
+  </div>
+</div>
+
+  <div class="command">
+    <code><strong>M1release @user @teamRole</strong></code> — Release a player from a team
+    <br>
+    <img src="https://cdn.discordapp.com/attachments/1386349290653225130/1396612006286721074/IMG_4029.png?ex=687eb7ca&is=687d664a&hm=6aeb0013c925e2fa3eed4c27d411e86d272674bf9f9bd10e10906dceddb3f900&" alt="release command" style="width: 100%; height: auto; border-radius: 10px;">
+    <br>
+    <span class="toggle-indicator" onclick="toggleDetail(this)">▼ Show more</span>
+      <div class="details-wrapper">
+    <div class="details">
+      <p><strong>use this command to release a player from a teams role, must be set up in M1config, only works with 1 user and 1 role at a time.</strong></p>
+      </div>
     </div>
   </div>
-
+</div>
 
   <!-- Legal -->
   <div class="category">
     <h2>⚖️ Legal</h2>
-    <div class="command">
-      <p><strong>M1legal</strong> - View bots legal documents</p>
-      <img src="https://cdn.discordapp.com/attachments/1386349290653225130/1396610429920215050/IMG_4027.png?ex=687eb652&is=687d64d2&hm=ce6e130aa352b80e8a75bbaa09e136708b8ac6488df4fa18be4b5fc8cd19ecfd&" alt="Legal command">
+
+  <div class="command">
+    <code><strong>M1legal</strong></code> — View bots legal documents
+    <br>
+    <img src="https://cdn.discordapp.com/attachments/1386349290653225130/1396610429920215050/IMG_4027.png?ex=687eb652&is=687d64d2&hm=ce6e130aa352b80e8a75bbaa09e136708b8ac6488df4fa18be4b5fc8cd19ecfd&" alt="legal command" style="width: 100%; height: auto; border-radius: 10px;">
+    <br>
+    <span class="toggle-indicator" onclick="toggleDetail(this)">▼ Show more</span>
+      <div class="details-wrapper">
+    <div class="details">
+      <p><strong>Use this command to veiw legal documents such as Privacy Policy & Terms of Service.</strong></p>
+      </div>
     </div>
   </div>
+</div>
+
 
   <!-- config -->
   <div class="category">
     <h2>⚙️ Configuration</h2>
-    <div class="command">
-      <p><strong>M1config</strong> - See current server config and command options</p>
-      <img src="https://cdn.discordapp.com/attachments/1386349290653225130/1396635252226527242/IMG_4035.png?ex=687ecd70&is=687d7bf0&hm=7b63a22023447529a9e344963ef467ae5a9b44ce9f832ddf9723a88b94dffd7e&" alt="config command">
+
+  <div class="command">
+    <code><strong>M1config</strong></code> — See current server config and command options
+    <br>
+    <img src="https://cdn.discordapp.com/attachments/1386349290653225130/1396635252226527242/IMG_4035.png?ex=687ecd70&is=687d7bf0&hm=7b63a22023447529a9e344963ef467ae5a9b44ce9f832ddf9723a88b94dffd7e&" alt="config command" style="width: 100%; height: auto; border-radius: 10px;">
+    <br>
+    <span class="toggle-indicator" onclick="toggleDetail(this)">▼ Show more</span>
+      <div class="details-wrapper">
+    <div class="details">
+      <p><strong>Use this command to veiw current server configuration and see configuration options.</strong></p>
+      </div>
     </div>
   </div>
+</div>
   
 
 </body>
