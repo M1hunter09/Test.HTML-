@@ -32,7 +32,7 @@ body {
   font-weight: 500;
   position: relative;
   background: linear-gradient(90deg, #222, #333);
-  box-shadow: 0 0 10px linear-gradient(90deg, #00f2ff ,#7200fe);
+  box-shadow: 0 0 12px rgba(0, 242, 255, 0.6), 0 0 24px rgba(114, 0, 254, 0.4);
   transition: all 0.3s ease;
   backdrop-filter: blur(3px);
 }
@@ -61,7 +61,7 @@ body {
   background: #111;
   color: #00f2ff;
   transform: translateY(-2px);
-  box-shadow: 0 0 12px rgba(93, 80, 194, 0.86);
+  box-shadow: 0 0 10px rgba(93, 80, 194, 0.86);
 }
 
 .navbar a.active {
