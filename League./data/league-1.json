@@ -1,9 +1,9 @@
 {
   "name": "Soul FC League",
-  "description": "A casual tournament hosted by Soul FC. Featuring 3 competitive teams in a round-robin format.",
-  "createdBy": "User#1234",
+  "description": "A casual tournament hosted by Soul FC. Featuring 3 competitive teams in a league match format.",
+  "createdBy": "M1hunter09",
   "createdAt": "2025-07-30T14:00:00Z",
-  "guildId": "987654321123456789",
+  "guildId": "1386084993662582926",
 
   "teams": [
     "Team A",
