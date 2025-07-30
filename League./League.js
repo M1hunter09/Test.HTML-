@@ -27,3 +27,4 @@ fetch(dataURL)
   .catch(err => {
     document.body.innerHTML = "<h2 style='text-align:center;'>League Not Found</h2>";
   });
+
