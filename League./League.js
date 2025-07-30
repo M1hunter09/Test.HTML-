@@ -1,30 +1,36 @@
 const params = new URLSearchParams(window.location.search);
 const leagueId = params.get("id") || "league-1";
-const dataURL = `/League./${leagueId}.json`;
+const dataURL = `League./${leagueId}.html`;
 
 fetch(dataURL)
   .then(res => res.json())
   .then(data => {
     document.getElementById("league-name").textContent = data.name || "Unnamed League";
-    document.getElementById("league-meta").textContent = `Created by ${data.createdBy || "Unknown"} on ${data.createdAt || "Unknown Date"}`;
+    document.getElementById("league-description").textContent = data.description || "";
+    document.getElementById("league-meta").textContent = `Created by ${data.createdBy || "Unknown"} on ${formatDate(data.createdAt)}`;
 
     // Teams
-    const teams = data.teams || [];
-    const teamsList = teams.map(t => `<li>${t}</li>`).join("");
-    document.getElementById("teams-list").innerHTML = teamsList;
+    document.getElementById("teams-list").innerHTML =
+      (data.teams || []).map(t => `<li>${t}</li>`).join("");
 
     // Standings
-    const standings = data.standings || [];
-    const standingsList = standings.map(s => `<li>${s.team}: ${s.points} pts</li>`).join("");
-    document.getElementById("standings-list").innerHTML = standingsList;
+    document.getElementById("standings-list").innerHTML =
+      (data.standings || []).map(s => `<li><strong>${s.team}</strong>: ${s.points} pts</li>`).join("");
 
     // Matches
-    const matches = data.matches || [];
-    const matchList = matches.map(m => `<li>${m.teamA} ${m.scoreA} - ${m.scoreB} ${m.teamB}</li>`).join("");
-    document.getElementById("matches-list").innerHTML = matchList;
-
+    document.getElementById("matches-list").innerHTML =
+      (data.matches || []).map(m =>
+        `<li>${m.teamA} ${m.scoreA} - ${m.scoreB} ${m.teamB}</li>`
+      ).join("");
   })
-  .catch(err => {
+  .catch(() => {
     document.body.innerHTML = "<h2 style='text-align:center;'>League Not Found</h2>";
   });
 
+function formatDate(dateStr) {
+  if (!dateStr) return "Unknown";
+  const d = new Date(dateStr);
+  return d.toLocaleDateString(undefined, {
+    year: "numeric", month: "short", day: "numeric"
+  });
+}
