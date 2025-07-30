@@ -1,40 +1,26 @@
 {
-  "league-name": "Soul FC League",
-  "league-description": "A casual tournament hosted by Soul FC. Featuring 3 competitive teams in a league match format.",
+  "name": "Soul FC League",
+  "description": "A casual tournament hosted by Soul FC.",
   "createdBy": "M1hunter09",
   "createdAt": "2025-07-30T14:00:00Z",
   "guildId": "1386084993662582926",
 
-  "teams-list": [
+  "teams": [
     "Team A",
     "Team B",
     "Team C"
   ],
 
-  "standings-list": [
+  "standings": [
     { "team": "Team A", "points": 6 },
     { "team": "Team B", "points": 3 },
     { "team": "Team C", "points": 0 }
   ],
 
-  "matches-list": [
-    {
-      "teamA": "Team A",
-      "scoreA": 2,
-      "scoreB": 1,
-      "teamB": "Team B"
-    },
-    {
-      "teamA": "Team B",
-      "scoreA": 1,
-      "scoreB": 0,
-      "teamB": "Team C"
-    },
-    {
-      "teamA": "Team A",
-      "scoreA": 3,
-      "scoreB": 0,
-      "teamB": "Team C"
-    }
+  "matches": [
+    { "teamA": "Team A", "scoreA": 2, "scoreB": 1, "teamB": "Team B" },
+    { "teamA": "Team B", "scoreA": 1, "scoreB": 0, "teamB": "Team C" },
+    { "teamA": "Team A", "scoreA": 3, "scoreB": 0, "teamB": "Team C" }
   ]
 }
+
