@@ -1,0 +1,15 @@
+{
+  "name": "Soul FC League",
+  "createdBy": "User#1234",
+  "guildId": "1386084993662582926",
+  "teams": [
+    "Team A",
+    "Team B",
+    "Team C"
+  ],
+  "standings": [
+    { "team": "Team A", "points": 3 },
+    { "team": "Team B", "points": 1 },
+    { "team": "Team C", "points": 0 }
+  ]
+}
