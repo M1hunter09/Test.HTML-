@@ -1,6 +1,6 @@
 const params = new URLSearchParams(window.location.search);
 const leagueId = params.get("id") || "league-1";
-const dataURL = `League./${leagueId}.json`;
+const dataURL = `League./data/${leagueId}.json`;
 
 fetch(dataURL)
   .then(res => res.json())
