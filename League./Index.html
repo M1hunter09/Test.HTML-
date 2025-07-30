@@ -2,32 +2,70 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>League Viewer</title>
-  <link rel="stylesheet" href="/League./style.css" />
+  <title>League Finder</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <style>
+    .center-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 100px;
+      padding: 20px;
+      background: #1e1e1e;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.4);
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: none;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #3a80f6;
+      color: white;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #336bd1;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  </style>
 </head>
 <body>
-  <main class="container">
-    <header>
-      <h1 id="league-name">Loading League...</h1>
-      <p id="league-meta" class="meta"></p>
-    </header>
+  <div class="center-box">
+    <h1>Find a League</h1>
+    <input type="text" id="league-id" placeholder="Enter League ID (e.g., league-12)" />
+    <button onclick="goToLeague()">View League</button>
+  </div>
 
-    <section class="card">
-      <h2>Teams</h2>
-      <ul id="teams-list"></ul>
-    </section>
-
-    <section class="card">
-      <h2>Standings</h2>
-      <ul id="standings-list"></ul>
-    </section>
-
-    <section class="card">
-      <h2>Match Results</h2>
-      <ul id="matches-list"></ul>
-    </section>
-  </main>
-
-  <script src="/League./League.js"></script>
+  <script>
+    function goToLeague() {
+      const id = document.getElementById("league-id").value.trim();
+      if (!id) {
+        alert("Please enter a League ID.");
+        return;
+      }
+      window.location.href = `/league/index.html?id=${encodeURIComponent(id)}`;
+    }
+  </script>
 </body>
 </html>
+
