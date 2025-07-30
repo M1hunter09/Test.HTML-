@@ -1,0 +1,14 @@
+{
+  "league-1": {
+    "name": "Soul FC League",
+    "guildId": "987654321123456789",
+    "createdBy": "User#1234",
+    "createdAt": "2025-07-30T14:00:00Z"
+  },
+  "league-2": {
+    "name": "Chaos Cup",
+    "guildId": "123456789987654321",
+    "createdBy": "SomeoneElse#5678",
+    "createdAt": "2025-07-30T14:01:00Z"
+  }
+}
