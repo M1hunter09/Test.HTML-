@@ -8,112 +8,177 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-TfQJw4P8L7Cjpm2eP1hdkRaZPK4y6WpdQIgK8VXbDkmkOo9d/7hVbJtMUVsXkeJLbEv3r9fUew+liQUHQz4ulA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style>
     :root {
-      /* Dark theme (black & light blue) */
-      --bg-dark: #0d0d0d;
-      --text-dark: #d0e7ff;
-      --card-dark: #1a1a1a;
-      --accent-dark: #3a9df6;
-
-      /* Light theme (white & light purple) */
-      --bg-light: #ffffff;
-      --text-light: #5a2970;
-      --card-light: #f3e9fc;
-      --accent-light: #c08df0;
+      --dark-bg: #0d0d0d;
+      --dark-text: #d0e7ff;
+      --dark-accent: #3a9df6;
+      --light-bg: #ffffff;
+      --light-text: #5a2970;
+      --light-accent: #b487d8;
     }
 
     body {
       margin: 0;
-      padding: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg-dark);
-      color: var(--text-dark);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 40px 20px;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--dark-bg);
+      color: var(--dark-text);
       transition: background 0.3s, color 0.3s;
     }
+.navbar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: linear-gradient(90deg, #0d0d0d, #1a1a1a); 
+  padding: 12px 0;
+  box-shadow: 0 0 25px linear-gradient(90deg, #65009c, #010101);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin: 8px 12px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 500;
+  position: relative;
+  background: linear-gradient(90deg, #222, #333);
+  box-shadow: 0 0 10px rgba(93, 80, 194, 0.86);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(3px);
+}
+
+.navbar a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  padding: 2px;
+  background: linear-gradient(90deg, #00f2ff, #7200fe);
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.navbar a.active::before {
+  opacity: 1;
+}
+
+.navbar a:hover {
+  color: #00f2ff;
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(0, 242, 255, 0.8);
+}
+
+.navbar a.active {
+  background: #111;
+  color: #00f2ff;
+  font-weight: 600;
+  box-shadow: 0 0 16px rgba(0, 242, 255, 0.7), 0 0 30px rgba(114, 0, 254, 0.5);
+}
+
 
     .light-mode {
-      background-color: var(--bg-light);
-      color: var(--text-light);
+      background-color: var(--light-bg);
+      color: var(--light-text);
     }
 
-    .card {
-      background-color: var(--card-dark);
-      border-radius: 16px;
-      padding: 30px;
+    header {
+      background: src="Images/Banner.img" no-repeat center center;
+      background-size: cover;
+      height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      width: 100%;
-      max-width: 500px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
-      transition: background 0.3s;
     }
 
-    .light-mode .card {
-      background-color: var(--card-light);
+    header h1 {
+      font-size: 2.5rem;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 10px 20px;
+      border-radius: 12px;
+    }
+
+    .profile {
+      text-align: center;
+      margin-top: -60px;
     }
 
     .avatar {
       width: 120px;
       height: 120px;
       border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 15px;
+      border: 4px solid white;
+      margin-bottom: 10px;
     }
 
-    h1 {
-      margin: 10px 0 5px;
-      font-size: 28px;
+    .tagline {
+      font-size: 1.1rem;
+      opacity: 0.8;
+      margin-bottom: 20px;
     }
 
-    p.bio {
-      font-size: 16px;
-      margin-bottom: 25px;
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
     }
 
-    .social-link {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      margin: 10px auto;
-      padding: 12px 20px;
-      background-color: var(--accent-dark);
+    .social-tile {
+      background-color: var(--dark-accent);
+      padding: 16px;
+      border-radius: 12px;
       color: white;
-      text-decoration: none;
       font-weight: bold;
-      border-radius: 8px;
-      max-width: 400px;
-      transition: background 0.3s;
-      font-size: 16px;
+      text-align: center;
+      text-decoration: none;
+      transition: transform 0.3s ease, background-color 0.3s;
     }
 
-    .social-link i {
-      font-size: 18px;
+    .social-tile i {
+      display: block;
+      font-size: 24px;
+      margin-bottom: 8px;
+      animation: float 2s infinite ease-in-out;
     }
 
-    .light-mode .social-link {
-      background-color: var(--accent-light);
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    .light-mode .social-tile {
+      background-color: var(--light-accent);
       color: white;
     }
 
-    .social-link:hover {
-      opacity: 0.9;
+    .social-tile:hover {
+      transform: scale(1.05);
+      filter: brightness(1.1);
     }
 
-    .toggle-theme {
-      margin-top: 30px;
-      padding: 10px 16px;
-      background-color: var(--accent-dark);
-      color: white;
+    .theme-toggle {
+      display: block;
+      margin: 30px auto;
+      padding: 10px 20px;
       border: none;
       border-radius: 8px;
       cursor: pointer;
+      background-color: var(--dark-accent);
+      color: white;
     }
 
-    .light-mode .toggle-theme {
-      background-color: var(--accent-light);
+    .light-mode .theme-toggle {
+      background-color: var(--light-accent);
     }
   </style>
 <head>
@@ -126,35 +191,37 @@
     <a href="support.html">Support</a>
   </div>
 
-   <div class="content">
-    <h1 class="gradient-text">Welcome To The Updates Page!</h1>
-</body>
 
-</head>
-<body>
-  <div class="card">
-    <img src="Images/M1hunter09.img" class="avatar" alt="Profile Picture" />
-    <h1>M1hunter09</h1>
-    <p class="bio">Gamer ~ Developer ~ OutdoorsMan</p>
+  <header>
+    <h1>Welcome to My Socials</h1>
+  </header>
 
-    <a href="https://discord.gg/C93dnBpcrr" target="_blank" class="social-link">
+  <div class="profile">
+    <img src="images/M1hunter09.img" alt="Profile" class="avatar" />
+    <h2>M1hunter09</h2>
+    <p class="tagline">Gamer ~ Developer ~ OutdoorsMan</p>
+  </div>
+
+  <section class="social-grid">
+    <a href="https://discord.gg/C93dnBpcrr" target="_blank"
       <i class="fab fa-discord"></i> Dev Server
     </a>
 
-    <a href="https://discord.gg/hF9BrCqX8w" target="_blank" class="social-link">
+    <a href="https://discord.gg/hF9BrCqX8w" target="_blank"
       <i class="fab fa-discord"></i> YT/Personal Server
     </a>
 
-    <a href="https://www.youtube.com/channel/UCKjuTMkpaOE_QP0fwEXCAEg" target="_blank" class="social-link">
+    <a href="https://www.youtube.com/channel/UCKjuTMkpaOE_QP0fwEXCAEg" target="_blank"
       <i class="fab fa-youtube"></i> YouTube Channel
     </a>
+  </section>
 
-    <button class="toggle-theme" onclick="toggleTheme()">Toggle Theme</button>
-  </div>
+  <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
 
   <script>
     function toggleTheme() {
-      document.body.classList.toggle('light-mode');
+      document.body.classList.toggle("light-mode");
     }
   </script>
+</body>
 </html>
