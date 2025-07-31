@@ -312,6 +312,32 @@ function toggleDetail(button) {
     </div>
   </div>
 </div>
+
+
+<script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const content = document.querySelector(".content");
+
+      setTimeout(() => {
+        content.classList.add("fade-in");
+      }, 300); 
+    });
+
+    const links = document.querySelectorAll("a");
+    links.forEach(link => {
+      link.addEventListener("click", function (e) {
+        const content = document.querySelector(".content");
+        if (this.href && !this.href.includes("#")) {
+          e.preventDefault();
+          content.classList.remove("fade-in");
+          content.classList.add("fade-out");
+          setTimeout(() => {
+            window.location.href = this.href;
+          }, 500);
+        }
+      });
+    });
+  </script>
   
 
 </body>
