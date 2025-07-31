@@ -17,29 +17,6 @@
 
   
    <style> 
-.content {
-  opacity: 0;
-}
-.fade-in {
-      opacity: 0;
-      animation: fadeIn 1s ease forwards;
-    }
-
-    .fade-out {
-      opacity: 1;
-      animation: fadeOut 1s ease forwards;
-    }
-
-    @keyframes fadeIn {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
-    }
-
-    @keyframes fadeOut {
-      0% { opacity: 1; }
-      100% { opacity: 0; }
-    }
-
     body {
       margin: 0;
       background-color: #0e0e0e;
@@ -311,34 +288,7 @@ function toggleDetail(button) {
       </div>
     </div>
   </div>
-</div>
-
-
-<script>
-    window.addEventListener("DOMContentLoaded", () => {
-      const content = document.querySelector(".content");
-
-      setTimeout(() => {
-        content.classList.add("fade-in");
-      }, 300); 
-    });
-
-    const links = document.querySelectorAll("a");
-    links.forEach(link => {
-      link.addEventListener("click", function (e) {
-        const content = document.querySelector(".content");
-        if (this.href && !this.href.includes("#")) {
-          e.preventDefault();
-          content.classList.remove("fade-in");
-          content.classList.add("fade-out");
-          setTimeout(() => {
-            window.location.href = this.href;
-          }, 500);
-        }
-      });
-    });
-  </script>
-  
+</div>  
 
 </body>
 </html>
