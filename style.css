@@ -75,6 +75,12 @@ body {
   text-align: center;
 }
 
+.logo-img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
 .summary {
   cursor: pointer;
   color: #00f2ff;
