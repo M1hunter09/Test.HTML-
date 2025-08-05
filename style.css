@@ -81,6 +81,15 @@ body {
   object-fit: contain;
 }
 
+.signature {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  color: #888;
+  opacity: 0.6;
+  font-style: italic;
+}
+
 .summary {
   cursor: pointer;
   color: #00f2ff;
