@@ -75,6 +75,20 @@ body {
   text-align: center;
 }
 
+.logo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: #00f2ff;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+.logo-link:hover {
+  opacity: 0.8;
+}
+
 .logo-img {
   height: 40px;
   width: auto;
@@ -82,9 +96,7 @@ body {
 }
 
 .logo-text {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: white;
+  font-size: 1.1rem;
 }
 
 .signature {
@@ -121,7 +133,7 @@ body {
   color: transparent;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .content {
     padding: 20px;
     font-size: 0.95rem;
@@ -133,7 +145,11 @@ body {
   }
 
   .logo-img {
-    height: 30px;
+    height: 28px;
+  }
+
+  .logo-text {
+    font-size: 0.95rem;
   }
 }
 
