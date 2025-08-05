@@ -114,3 +114,20 @@ body {
   background-clip: text;
   color: transparent;
 }
+
+@media (max-width: 600px) {
+  .content {
+    padding: 20px;
+    font-size: 0.95rem;
+  }
+
+  .navbar a {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+  }
+
+  .logo-img {
+    height: 30px;
+  }
+}
+
