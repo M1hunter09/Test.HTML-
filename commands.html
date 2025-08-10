@@ -1,147 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
- <title>M1 Bot Commands</title>
-<link rel="stylesheet" href="style.css" />
-<head>
-<body>
-  <div class="navbar">
-    <a href="index.html">Home</a>
-    <a href="commands.html" class="active">M1 Bot</a>
-    <a href="games.html">Games</a>
-    <a href="Websites.html">Websites</a>
-    <a href="socials.html">Socials</a>
-    <a href="support.html">Support</a>
-  </div>
-
-  
-   <style> 
-    body {
-      margin: 0;
-      background-color: #0e0e0e;
-      font-family: 'Segoe UI', sans-serif;
-      color: #00f2ff;
-      padding: 20px;
-    }
-
-    h1 {
-      text-align: center;
-      color: #00f2ff;
-      margin-bottom: 40px;
-      font-size: 2.5em;
-    }
-
-    .category {
-      background-color: #1a1a1a;
-      border-left: 3px solid #00f2ff;
-      margin-bottom: 40px;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 15px #7200fe;
-      transition: transform 0.3s ease;
-    }
-
-    .category:hover {
-      transform: translateY(-5px);
-    }
-
-    .category h2 {
-      text-align: center;
-      margin-top: 0;
-      color: #00f2ff;
-      border-bottom: 2px solid #7200fe;
-      padding-bottom: 5px;
-    }
-
-    .command {
-      margin-bottom: 20px;
-    }
-
-    .command p {
-      margin: 0;
-    }
-
-    .command img {
-      width: 100%;
-      max-width: 600px;
-      border-radius: 5px;
-      margin-top: 10px;
-      box-shadow:
-       0 0 10px rgba(38, 198, 218, 0.6), 
-       0 0 20px rgba(201, 160, 255, 0.4);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .command img:hover {
-      transform: scale(1.02);
-      box-shadow:
-       0 0 12px rgba(38, 198, 218, 0.9),
-       0 0 24px rgba(201, 160, 255, 0.6);
-    }
-
-    @media (max-width: 768px) {
-      .command img {
-        width: 100%;
-      }
-    }   
-.details-wrapper {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease, padding 0.3s ease;
-  padding-top: 0;
-}
-
-.details-wrapper.expanded {
-  max-height: 500px; /* enough to show all content */
-  padding-top: 10px;
-}
-
-.details {
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.details-wrapper.expanded .details {
-  opacity: 1;
-}
-
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>M1 Bot Commands</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="site">
+    <header class="header">
+      <a class="logo" href="index.html">
+        <img src="logo.png" alt="logo">
+        <div class="title">M1 Bot</div>
+      </a>
 
-<script>
-function toggleDetail(button) {
-  const command = button.closest(".command");
-  const wrapper = command.querySelector(".details-wrapper");
-  const isExpanded = wrapper.classList.contains("expanded");
+      <nav class="navbar" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="commands.html" class="active">M1 Bot</a>
+        <a href="games.html">Games</a>
+        <a href="Websites.html">Websites</a>
+        <a href="socials.html">Socials</a>
+        <a href="support.html">Support</a>
+      </nav>
+    </header>
 
-  wrapper.classList.toggle("expanded");
-  button.textContent = isExpanded ? "▼ Show more" : "▲ Show less";
-}
-</script>
+    <main class="main">
+      <section style="padding-right: 0;">
+        <h1 class="gradient-text" style="text-align:center; margin: 8px 0 20px 0;">M1 Bot Commands</h1>
+        <p style="text-align:center; color: var(--muted); margin-bottom: 18px;">Tip: send <code>M1help</code> in a server with the Bot</p>
 
-  <h1> M1 Bot Commands</h1>
- <p style="color: #8264fb; text-align: center;">Tip, send "M1help" in a server with the Bot</p>
-
-<!-- Moderation -->
-<div class="category">
+        <div class="panels">
+          <article class="panel">
   <h2>🛡️ Moderation</h2>
 
-  <div class="command">
-    <code><strong>M1warn @user [reason]</strong></code> — Warn a member
-    <br>
-    <img src="https://cdn.discordapp.com/attachments/1386349290653225130/1396608734859624600/IMG_4023.png?ex=688351fe&is=6882007e&hm=92dd82cd0ff4cf70d1f401d4f0de7067b3fb85c1fb6fc9a641281b070e999dd9&" alt="Warn command" style="width: 100%; height: auto; border-radius: 10px;">
-    <br>
-    <span class="toggle-indicator" onclick="toggleDetail(this)">▼ Show more</span>
-    
-    <div class="details-wrapper">
-    <div class="details">
+   <div class="command">
+    <code>M1warn @user [reason]</code> — Warn a member
+    <img src="https://cdn.discordapp.com/attachments/1386349290653225130/1396608734859624600/IMG_4023.png?ex=688351fe&is=6882007e&hm=92dd82cd0ff4cf70d1f401d4f0de7067b3fb85c1fb6fc9a641281b070e999dd9&" alt="Warn command">
+     <details>
+       <summary>Show more</summary>
       <p><strong>Staff can use this command to warn members. It sends them a DM with the warning info and stores their warning count in the database.</strong></p>
-     </div>
-  </div>
-</div>
+    </details>
+   </div>
 
   <div class="command">
     <code><strong>M1warnings @user</strong></code> — Check user warnings
